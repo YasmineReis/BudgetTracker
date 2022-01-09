@@ -28,6 +28,6 @@ june_budget.adjust_charge("food", 100)
 june_budget.adjust_charge("food", 300)
 june_budget.adjust_charge("doggies", 500)
 june_budget.add_income(800)
-
+july_budget = Budget(5000)
 
 print(june_budget)
