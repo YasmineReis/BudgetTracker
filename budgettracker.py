@@ -9,9 +9,13 @@ class Budget:
         to_return = ""
         to_return += ("total income: " + str(self.income) + "\n")
         charges = ""
+        total_charges = 0
         for key, value in self.base_charges.items():
             charges += str(key) + ": " + str(value) + "\n"
         to_return += ("charges:\n" + charges)
+        for value in self.base_charges.values():
+            total_charges += value
+        to_return += ("amount saved this month: " + str(self.income - total_charges))
         return to_return
 
     def adjust_charge(self, item, amount):
@@ -29,5 +33,9 @@ june_budget.adjust_charge("food", 300)
 june_budget.adjust_charge("doggies", 500)
 june_budget.add_income(800)
 july_budget = Budget(5000)
+january_budget = Budget(2000)
+january_budget.adjust_charge("tv", 1500)
+january_budget.adjust_charge("bananas", 50)
+january_budget.adjust_charge("garbage", 500)
 
-print(june_budget)
+print(january_budget)
